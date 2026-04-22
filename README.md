@@ -1,6 +1,7 @@
 # Java Client-Server CLI Chat Application
 
-A networked client-server chat application built in Java using sockets. The project demonstrates core networking concepts, custom communication protocols, and handling multiple clients in a real-time system.
+A networked client-server chat application built in Java using sockets, for the course called Internet Technoglogy at Saxion Univeristy. 
+The project demonstrates core networking concepts, custom communication protocols, and handling multiple clients in a real-time system.
 
 ## Features
 - Real-time messaging between multiple clients
