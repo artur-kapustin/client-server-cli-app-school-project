@@ -1,0 +1,162 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="29.3.4">
+  <diagram name="Page-1" id="tOeyKGo8bS0w2X3aQyXD">
+    <mxGraphModel dx="1213" dy="827" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QE6haXslLFuCDXXtF1zR-6" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FileTransferManager&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- &lt;u&gt;FILE_OUT_PATH: String&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- transferId: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- fileInPath: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- receivedChecksum: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- username: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- filename: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getSha256Hex(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setReceivedChecksum(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setUsername(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setFileInPath(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isTransferInProgress(): boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ download(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ upload(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setTransferId(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getTransferId():&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;String&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setFilename(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="280" width="210" x="1065" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-1" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CLIManager&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- isRunning: boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- currentGameId: String&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- messageSender: MessageSender&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- scanner: Scanner&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- transferManager: FileTransferManager&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ CLIManger(MessageSender, FileTransferManager)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ run(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;setCurrentGameId(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ promptLogin(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- chooseCommand(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleMessage(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handlePrivate(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleListUsers(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleCoinTossStart(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleHeads(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleTails(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleFileTransferRequest(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleDownloadAccept(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleDownloadReject(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleExit(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleHelp(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="350" width="290" x="360" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-2" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Main&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ main(String[]): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="210" x="760" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-3" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Listener&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- reader: BufferedReader&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleMessage: Consumer&amp;lt;Message&amp;gt;&amp;nbsp;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Listener(InputStream, Consumer&amp;lt;Message&amp;gt;): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ listenToServer(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- readInput(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleGeneralResp(String, int, String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleListUsersResp(ListResp): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleCoinTossResult(CoinTossResult)&lt;/p&gt;" vertex="1">
+          <mxGeometry height="170" width="290" x="720" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-5" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Client&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- cliManager: CLIManager&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- listener: Listener&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- messageSender: MessageSender&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- transferManager: FileTransferManager&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ start(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleServerMessage(Message): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- logon(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- onPing(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- onLogon(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="180" width="230" x="750" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-6" edge="1" parent="1" source="wrJBoBoWKoWH4W4e7h-8-2" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;" target="wrJBoBoWKoWH4W4e7h-8-5" value="Use">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="840" y="330" as="sourcePoint" />
+            <mxPoint x="1000" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-7" edge="1" parent="1" source="wrJBoBoWKoWH4W4e7h-8-5" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="QE6haXslLFuCDXXtF1zR-6" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="360" />
+              <mxPoint x="1020" y="360" />
+            </Array>
+            <mxPoint x="760" y="470" as="sourcePoint" />
+            <mxPoint x="920" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-8" connectable="0" parent="wrJBoBoWKoWH4W4e7h-8-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.4055" y="2" as="geometry">
+            <mxPoint x="-6" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-9" edge="1" parent="1" source="wrJBoBoWKoWH4W4e7h-8-5" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="wrJBoBoWKoWH4W4e7h-8-3" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="590" />
+            </Array>
+            <mxPoint x="970" y="500" as="sourcePoint" />
+            <mxPoint x="970" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-10" connectable="0" parent="wrJBoBoWKoWH4W4e7h-8-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.4055" y="2" as="geometry">
+            <mxPoint x="-2" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-11" edge="1" parent="1" source="wrJBoBoWKoWH4W4e7h-8-5" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="wrJBoBoWKoWH4W4e7h-8-1" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="360" />
+              <mxPoint x="700" y="360" />
+            </Array>
+            <mxPoint x="1040" y="410" as="sourcePoint" />
+            <mxPoint x="1120" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-12" connectable="0" parent="wrJBoBoWKoWH4W4e7h-8-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.4055" y="2" as="geometry">
+            <mxPoint x="1" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-13" parent="1" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" value="domain.utils" vertex="1">
+          <mxGeometry height="50" width="100" x="815" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-16" edge="1" parent="1" source="QE6haXslLFuCDXXtF1zR-6" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="wrJBoBoWKoWH4W4e7h-8-13" value="Use">
+          <mxGeometry relative="1" width="160" x="0.8667" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="1100" y="800" />
+            </Array>
+            <mxPoint x="1215" y="600" as="sourcePoint" />
+            <mxPoint x="1150" y="975" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 16px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;HashUtil&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;ConverMessageUtil&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;MessageSender&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="185" x="880" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-20" edge="1" parent="1" source="wrJBoBoWKoWH4W4e7h-8-5" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="wrJBoBoWKoWH4W4e7h-8-13" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="420" />
+              <mxPoint x="1040" y="780" />
+            </Array>
+            <mxPoint x="1000" y="350" as="sourcePoint" />
+            <mxPoint x="1085" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-21" connectable="0" parent="wrJBoBoWKoWH4W4e7h-8-20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.4055" y="2" as="geometry">
+            <mxPoint x="-92" y="37" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-24" edge="1" parent="1" source="wrJBoBoWKoWH4W4e7h-8-1" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="wrJBoBoWKoWH4W4e7h-8-13" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="790" />
+            </Array>
+            <mxPoint x="820" y="420" as="sourcePoint" />
+            <mxPoint x="720" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-25" connectable="0" parent="wrJBoBoWKoWH4W4e7h-8-24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.4055" y="2" as="geometry">
+            <mxPoint x="127" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="The classes to the right of this text are inside this package. Plus domain.utils.constants and domain.utils.messages (Message records) packages." vertex="1">
+          <mxGeometry height="80" width="170" x="730" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="wrJBoBoWKoWH4W4e7h-8-30" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" value="The inside of domain.utils is not shown, since the diagram would become too large." vertex="1">
+          <mxGeometry height="140" width="110" x="600" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="jH2Yfr0WCcyACUstP0nH-1" parent="1" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" value="domain.client.constants" vertex="1">
+          <mxGeometry height="50" width="160" x="530" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="jH2Yfr0WCcyACUstP0nH-3" edge="1" parent="1" source="wrJBoBoWKoWH4W4e7h-8-5" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;" target="jH2Yfr0WCcyACUstP0nH-1" value="Use">
+          <mxGeometry relative="1" width="160" x="0.5173" y="2" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="860" y="220" as="sourcePoint" />
+            <mxPoint x="860" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jH2Yfr0WCcyACUstP0nH-4" edge="1" parent="1" source="wrJBoBoWKoWH4W4e7h-8-1" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="jH2Yfr0WCcyACUstP0nH-1" value="Use">
+          <mxGeometry relative="1" width="160" x="0.5385" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="590" y="530" />
+              <mxPoint x="590" y="530" />
+            </Array>
+            <mxPoint x="805" y="560" as="sourcePoint" />
+            <mxPoint x="670" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d6fIXcGdPMqu2Ko4jnGt-1" edge="1" parent="1" source="wrJBoBoWKoWH4W4e7h-8-1" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="QE6haXslLFuCDXXtF1zR-6" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="505" y="80" />
+              <mxPoint x="1170" y="80" />
+            </Array>
+            <mxPoint x="740" y="600" as="sourcePoint" />
+            <mxPoint x="1065" y="930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d6fIXcGdPMqu2Ko4jnGt-2" connectable="0" parent="d6fIXcGdPMqu2Ko4jnGt-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.4055" y="2" as="geometry">
+            <mxPoint x="136" y="77" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

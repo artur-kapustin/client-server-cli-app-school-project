@@ -1,0 +1,317 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="29.3.4">
+  <diagram name="Page-1" id="gp5YHRCiabEIVGLHDf62">
+    <mxGraphModel dx="1083" dy="1259" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-1" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ServerMessageManager&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- session: WritableSession&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- writableSessionsSupplier: Supplier&amp;lt;Map&amp;lt;String, WritableSession&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- onLogon: Runnable&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ServerMessageSender(WritabeSession,&amp;nbsp;Supplier&amp;lt;Map&amp;lt;String, WritableSession&amp;gt;&amp;gt;,&amp;nbsp;Runnable)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ sendToOtherUser(String, Message): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ sendUsersList(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ handleBroadcastReq(BroadcastReq): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ broadcastMessage(Message): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ handlePrivateReq(PrivateReq): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ handleHeads(Heads): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ handleTails(Tails): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ handleTransferReq(TransferReq): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ handleDownloadAccept(DownloadAccept): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ handleDownloadReject(DownloadReject): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ logon(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sendPrivateMessage(String, Message): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- startCoinTossGame(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- makeChoice(String, boolean): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- validateUsername(String): int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- isLoggedIn(): boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="340" width="370" x="870" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-2" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PingPongHandler&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- serverMessageManager: ServermessageManager&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- isConnectionClosed: Supplier&amp;lt;Boolean&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- future: CompletableFuture&amp;lt;Void&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- onTimeout: Runnable&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ PingPongHandler(ServerMessageManager, Runnable, Supplier&amp;lt;Boolean&amp;gt;)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ run(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ onPong(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="150" width="290" x="540" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-4" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Listener&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- bufferedReader: BufferedReader&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- closeConnection: Runnable&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- serverMessageManager: ServerMessageManager&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- onPong: Runnable&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Listener(ReadableSession, ServerMessageManager, Runnable, Runnable)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ listenToClient(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- readInput(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="150" width="280" x="170" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-5" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ClientSessionManager&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sessions: Map&amp;lt;String, ClientSession&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- clientSession: ClientSessino&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- pingPongHandler: PingPongHandler&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- serverMessageManager: ServerMessageManager&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- listener: Listener&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ClientSessionManager(Socket, Map&amp;lt;String, ClientSession&amp;gt;)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ run(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sessionsMapToWRitableSessionsMap(): Map&amp;lt;String, WritableSession&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- onLogon(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- closeConnection(): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="190" width="400" x="540" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-6" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Main&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ &lt;u&gt;gamesManager: CoinTossGamesManager&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ &lt;u&gt;transfersManager: FileTransferManager&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- &lt;u&gt;sessions: Map&amp;lt;String, ClientSession&amp;gt;&lt;/u&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ main(String[]): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="110" width="250" x="710" y="-180" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-7" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ClientSession&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- socket: Socket&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- username: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- printWriter: PrintWriter&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- bufferedReader: BufferedReader&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ClientSession(Socket, String)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getUsername(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setUsername(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getPrintWriter(): PrintWriter&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getBufferedReader(): BufferedReader&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ closeConnection(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isConnectionClosed(): boolean&lt;/p&gt;" vertex="1">
+          <mxGeometry height="210" width="220" x="240" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-8" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;ReadableSession&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;i&gt;+ getBufferedReader(): BufferedReader&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;i&gt;+ getUsername(): String&lt;/i&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="110" width="220" x="-30" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-10" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;WritableSession&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;i&gt;+ getPrintWriter(): PrintWriter&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;i&gt;+ getUsername(): String&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;i&gt;+ setUsername(String): void&lt;/i&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="170" x="540" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-11" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CoinTossGame&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;-&amp;nbsp;&lt;u&gt;RANDOM: Random&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- winScore: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- player2: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- choices: Map&amp;lt;String, Boolean&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- player1: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- scores: Map&amp;lt;String, Integer&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ CoinTossGame(String, String, int): int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ hasWon(String): boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getPlayer1(): String&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ getPlayer2(): String&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ putChoice(String, boolean): Map&amp;lt;String, Integer&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ isFinished(): boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;- reserChoices(): void&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;- toss(): void&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;- increment(String): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="270" width="280" x="-140" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-12" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CoinTossGameManager&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ games: ConcurrentHashMap&amp;lt;String, CoinTossGame&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ removeGame(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getGame(String): CoinTossGame&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ addGame(String, String, String, int): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="110" width="310" x="155" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-13" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FileTransfer&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- receiver: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sender: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- accepted: boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- onCompletion: Runnable&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- senderSocket: Socket&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- receiverSocket: Socket&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ FileTransfer(String, String)&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ accept(): void&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ reject(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setSocket(String, Socket): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ waitForAnswer(Runnable, Runnable): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setOnCompletion(Runnable): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ initiateFileTransfer(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="230" width="250" x="1275" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-15" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FileTransferManager&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- transfers: ConcurrentHashMap&amp;lt;String, FileTransfer&amp;gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ waitForResponse(String, Runnable, Runnable): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ removeFileTransfer(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ addFileTransfer(String, String, String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getFileTransfer(String): FileTransfer&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setSocket(String, String, Socket): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setOnFileTransferCompletion(String, Runnable): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ reject(String): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ containsKey(String): boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ accept(String): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="190" width="300" x="1250" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-16" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FileTransferSocketManager&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- printWriter: PrintWriter&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- socket: Socket&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sessions: Map&amp;lt;String, CilentSession&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ FileTransferSocketManager(Socket, Map&amp;lt;String, ClientSession&amp;gt;)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ run(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- handleTransferFile(TransferFile): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- send(Message): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="150" width="215" x="960" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-18" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-6" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-15" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1020" y="-100" as="sourcePoint" />
+            <mxPoint x="1180" y="-100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-19" connectable="0" parent="n5Uk07vKIo2IX_kwQY-S-18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-20" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-15" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-13" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1460" y="170" as="sourcePoint" />
+            <mxPoint x="1900" y="285" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-21" connectable="0" parent="n5Uk07vKIo2IX_kwQY-S-20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="2" y="-21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-22" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-16" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-15" value="Use">
+          <mxGeometry relative="1" width="160" x="0.0588" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1230" y="75" />
+              <mxPoint x="1230" y="75" />
+            </Array>
+            <mxPoint x="1040" y="120" as="sourcePoint" />
+            <mxPoint x="1200" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-23" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-6" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-16" value="Use">
+          <mxGeometry relative="1" width="160" x="0.663" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1058" y="-90" />
+            </Array>
+            <mxPoint x="1220" y="80" as="sourcePoint" />
+            <mxPoint x="1305" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-25" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-1" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-15" value="Use">
+          <mxGeometry relative="1" width="160" x="-0.875" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1050" y="170" />
+            </Array>
+            <mxPoint x="1230" y="120" as="sourcePoint" />
+            <mxPoint x="1315" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-26" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-6" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-5" value="Use">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="740" y="-30" />
+              <mxPoint x="740" y="-30" />
+            </Array>
+            <mxPoint x="1060" y="-60" as="sourcePoint" />
+            <mxPoint x="1158" y="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-27" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-6" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-12" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1260" y="-40" as="sourcePoint" />
+            <mxPoint x="1700" y="75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-28" connectable="0" parent="n5Uk07vKIo2IX_kwQY-S-27" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="2" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-33" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-5" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-1" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="230" />
+              <mxPoint x="900" y="230" />
+            </Array>
+            <mxPoint x="1085" y="-10" as="sourcePoint" />
+            <mxPoint x="670" y="105" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-34" connectable="0" parent="n5Uk07vKIo2IX_kwQY-S-33" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="2" y="-24" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-35" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-5" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-7" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="170" />
+              <mxPoint x="520" y="500" />
+            </Array>
+            <mxPoint x="880" y="230" as="sourcePoint" />
+            <mxPoint x="880" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-36" connectable="0" parent="n5Uk07vKIo2IX_kwQY-S-35" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="11" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-39" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-1" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-10" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="580" />
+              <mxPoint x="760" y="580" />
+            </Array>
+            <mxPoint x="940" y="570" as="sourcePoint" />
+            <mxPoint x="880" y="635" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-40" connectable="0" parent="n5Uk07vKIo2IX_kwQY-S-39" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="24" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-41" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-5" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-2" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="685" y="210" />
+              <mxPoint x="685" y="210" />
+            </Array>
+            <mxPoint x="910" y="220" as="sourcePoint" />
+            <mxPoint x="910" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-42" connectable="0" parent="n5Uk07vKIo2IX_kwQY-S-41" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="2" y="-24" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-45" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-7" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-8" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="440" />
+              <mxPoint x="210" y="440" />
+            </Array>
+            <mxPoint x="330" y="380" as="sourcePoint" />
+            <mxPoint x="490" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-46" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-7" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-10" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="570" />
+              <mxPoint x="510" y="570" />
+            </Array>
+            <mxPoint x="470" y="770" as="sourcePoint" />
+            <mxPoint x="420" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-47" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-12" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-11" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="-60" />
+              <mxPoint x="110" y="-60" />
+            </Array>
+            <mxPoint x="590" y="390" as="sourcePoint" />
+            <mxPoint x="510" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-48" connectable="0" parent="n5Uk07vKIo2IX_kwQY-S-47" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="2" y="-19" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-49" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-4" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-8" value="Use">
+          <mxGeometry relative="1" width="160" x="0.4003" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="240" y="370" />
+            </Array>
+            <mxPoint x="360" y="310" as="sourcePoint" />
+            <mxPoint x="520" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-51" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-5" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-4" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="140" />
+              <mxPoint x="510" y="140" />
+            </Array>
+            <mxPoint x="710" y="230" as="sourcePoint" />
+            <mxPoint x="710" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-52" connectable="0" parent="n5Uk07vKIo2IX_kwQY-S-51" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="25" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-53" parent="1" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" value="domain.utils" vertex="1">
+          <mxGeometry height="50" width="90" x="630" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-54" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=13;" value="The domain.utils package is used by most of the classes in this diagram. So I decided to not show the relationships for it. Because the diagrams would get to messed up" vertex="1">
+          <mxGeometry height="140" width="130" x="450" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="n5Uk07vKIo2IX_kwQY-S-56" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-1" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-11" value="Use">
+          <mxGeometry relative="1" width="160" x="0.9479" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1055" y="690" />
+              <mxPoint x="-80" y="690" />
+            </Array>
+            <mxPoint x="990" y="730" as="sourcePoint" />
+            <mxPoint x="990" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1AJdwEVoYJBNhruZmYan-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 16px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;HashUtil&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;ConverMessageUtil&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;MessageSender&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="185" x="920" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="1AJdwEVoYJBNhruZmYan-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="The classes to the right of this text are inside this package. Plus domain.utils.constants and domain.utils.messages (Message records) packages." vertex="1">
+          <mxGeometry height="80" width="170" x="750" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="1AJdwEVoYJBNhruZmYan-3" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;size=14;" value="The inside of domain.utils is not shown, since the diagram would become too large." vertex="1">
+          <mxGeometry height="140" width="110" x="620" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="j2oecoqKdfEPFvIv0JJK-1" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-4" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-1" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="-50" y="290" />
+              <mxPoint x="-50" y="670" />
+              <mxPoint x="980" y="670" />
+            </Array>
+            <mxPoint x="840" y="370" as="sourcePoint" />
+            <mxPoint x="610" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2oecoqKdfEPFvIv0JJK-2" connectable="0" parent="j2oecoqKdfEPFvIv0JJK-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1..1" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="50" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="db3dUMYaQ8nmk6SfR_OS-1" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-6" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-7" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="-90" />
+              <mxPoint x="500" y="470" />
+            </Array>
+            <mxPoint x="550" y="60" as="sourcePoint" />
+            <mxPoint x="440" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="db3dUMYaQ8nmk6SfR_OS-2" connectable="0" parent="db3dUMYaQ8nmk6SfR_OS-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="-8" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="db3dUMYaQ8nmk6SfR_OS-3" edge="1" parent="1" source="n5Uk07vKIo2IX_kwQY-S-16" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="n5Uk07vKIo2IX_kwQY-S-7" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="-60" />
+              <mxPoint x="500" y="-60" />
+              <mxPoint x="500" y="440" />
+            </Array>
+            <mxPoint x="860" y="-90" as="sourcePoint" />
+            <mxPoint x="610" y="472" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="db3dUMYaQ8nmk6SfR_OS-4" connectable="0" parent="db3dUMYaQ8nmk6SfR_OS-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.8927" y="-2" as="geometry">
+            <mxPoint x="-8" y="18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="29.3.4">
+  <diagram name="Page-1" id="F8UHLKk9rHfSBJLn4KpT">
+    <mxGraphModel dx="693" dy="473" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="y5qS0URp5r1rqUtpFpRh-1" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MessageSender&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# printWriter: PrintWriter&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ MessageSender(PrintWriter)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ sendMessage(Message): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="260" x="350" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="y5qS0URp5r1rqUtpFpRh-2" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;HashUtil&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ &lt;u&gt;sha256(InputStream): String&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ &lt;u&gt;toHex(byte[]): String&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ &lt;u&gt;sha256OutputStream(OutPutStream): DigestOutputStream&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ &lt;u&gt;messageDigestToHex(MessageDigest): String&lt;/u&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="330" x="650" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="y5qS0URp5r1rqUtpFpRh-3" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ConvertMessageUtil&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- &lt;u&gt;mapper: ObjectMapper&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- &lt;u&gt;objToNameMapping: Map&amp;lt;Class&amp;lt;?&amp;gt;, String&amp;gt;&lt;/u&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- &lt;u&gt;getClass(String): Class&amp;lt;?&amp;gt;&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ &lt;u&gt;objectToMessage(Message): String&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ &lt;u&gt;messageToObject(String): T&lt;/u&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="260" x="1020" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="y5qS0URp5r1rqUtpFpRh-5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=16;" value="Every record in domain.utils.messages package implements Message sealed interface" vertex="1">
+          <mxGeometry height="150" width="130" x="990" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="y5qS0URp5r1rqUtpFpRh-6" parent="1" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" value="domain.utils.constants" vertex="1">
+          <mxGeometry height="50" width="140" x="470" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="y5qS0URp5r1rqUtpFpRh-7" parent="1" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;align=left;verticalAlign=top;" value="domain.utils.messages" vertex="1">
+          <mxGeometry height="150" width="250" x="680" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="y5qS0URp5r1rqUtpFpRh-4" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Message&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="80" width="190" x="720" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="y5qS0URp5r1rqUtpFpRh-8" edge="1" parent="1" source="y5qS0URp5r1rqUtpFpRh-3" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;" target="y5qS0URp5r1rqUtpFpRh-4" value="Use">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="830" y="560" as="sourcePoint" />
+            <mxPoint x="990" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
